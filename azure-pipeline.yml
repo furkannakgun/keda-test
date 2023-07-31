@@ -22,7 +22,7 @@ stages:
     - task: Docker@2
       displayName: Build and Push Docker image
       inputs:
-        containerRegistry: 'HarborRegistryServiceConnection'
+        containerRegistry: 'harbortaas'
         repository: 'furkan-nginx/furkan-nginx'
         command: 'buildAndPush'
         Dockerfile: $(dockerfilePath)
