@@ -4,8 +4,7 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
   name: tzl-shrd
-  demands:
-  - agent.name -equals 'tzl-shrd-ado-cf7fdc95-cf9vl'
+
 
 variables:
   dockerRegistryServiceConnection: 'harbortaas'
