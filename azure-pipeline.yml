@@ -2,6 +2,7 @@ trigger:
 - master
 
 pool:
+  vmImage: 'ubuntu-latest'
   name: tzl-shrd
 
 variables:
