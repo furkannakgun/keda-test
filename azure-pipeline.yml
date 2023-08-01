@@ -24,3 +24,10 @@ steps:
 #    command: 'buildAndPush'
 #    Dockerfile: '**/Dockerfile'
 #    tags: $(tag)
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'harbortaas'
+    repository: 'nginx'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
