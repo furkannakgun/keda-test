@@ -11,21 +11,10 @@ variables:
 
 
 steps:
-
-
-#steps:
-#- task: Docker@2
-#  inputs:
-#    containerRegistry: 'harbortaas'
-#    repository: 'tzl-shrd-harbor.taas.vodafone.local/furkan-nginx/nginx'
-#    command: 'buildAndPush'
-#    Dockerfile: '**/Dockerfile'
-#    tags: $(tag)
-
 - task: Docker@2
   inputs:
     containerRegistry: 'DockerHub'
-    repository: 'furkanakgun/basitnginx'
+    repository: 'tzl-shrd-harbor.taas.vodafone.local/furkanakgun/basitnginx'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
     tags: $(tag)
