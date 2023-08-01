@@ -13,8 +13,8 @@ variables:
 steps:
 - task: Docker@2
   inputs:
-    containerRegistry: 'DockerHub'
-    repository: 'tzl-shrd-harbor.taas.vodafone.local/furkanakgun/basitnginx'
+    containerRegistry: 'dockerhub-furkan'
+    repository: 'furkanakgun/basitnginx'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
     tags: $(tag)
