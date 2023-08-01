@@ -11,10 +11,7 @@ variables:
 
 
 steps:
-- script: |
-    which docker
-    docker --version
-  displayName: 'Check Docker'
+
 
 #steps:
 #- task: Docker@2
