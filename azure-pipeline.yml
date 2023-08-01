@@ -3,6 +3,8 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
   name: tzl-poc
+  demands:
+  - agent.name -equals 'tzl-poc-ado-5f9b9bd77-j9shs'
 
 variables:
   tag: '$(Build.BuildId)'
