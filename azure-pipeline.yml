@@ -2,7 +2,7 @@ trigger:
 - master
 pool:
   #vmImage: 'ubuntu-latest'
-  name: tzl-shrd
+  name: azure-keda
 
 
 
@@ -24,7 +24,8 @@ steps:
 
 - task: Docker@2
   inputs:
-    containerRegistry: 'harbortaas'
-    repository: 'nginx'
+    containerRegistry: 'DockerHub'
+    repository: 'furkanakgun/basitnginx'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    tags: $(tag)
