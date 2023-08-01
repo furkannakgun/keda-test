@@ -4,11 +4,8 @@ pool:
   #vmImage: 'ubuntu-latest'
   name: azure-keda
 
-
-
 variables:
   tag: '$(Build.BuildId)'
-
 
 steps:
 - task: Docker@2
