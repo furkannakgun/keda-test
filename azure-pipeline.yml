@@ -1,7 +1,7 @@
 trigger:
 - master
 pool:
-  vmImage: 'ubuntu-latest'
+  #vmImage: 'ubuntu-latest'
   name: tzl-shrd
 
 
@@ -11,10 +11,16 @@ variables:
 
 
 steps:
-- task: Docker@2
-  inputs:
-    containerRegistry: 'harbortaas'
-    repository: 'tzl-shrd-harbor.taas.vodafone.local/furkan-nginx/nginx'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
-    tags: $(tag)
+- script: |
+    which docker
+    docker --version
+  displayName: 'Check Docker'
+
+#steps:
+#- task: Docker@2
+#  inputs:
+#    containerRegistry: 'harbortaas'
+#    repository: 'tzl-shrd-harbor.taas.vodafone.local/furkan-nginx/nginx'
+#    command: 'buildAndPush'
+#    Dockerfile: '**/Dockerfile'
+#    tags: $(tag)
