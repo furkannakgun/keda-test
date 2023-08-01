@@ -1,22 +1,17 @@
 trigger:
 - master
-
 pool:
   vmImage: 'ubuntu-latest'
   name: tzl-shrd
 
-
 variables:
-  dockerRegistryServiceConnection: 'harbortaas'
-  imageName: 'furkan-nginx/furkan-nginx'
   tag: '$(Build.BuildId)'
 
 steps:
-- script: docker build -t $(imageName):$(tag) .
-  displayName: 'Docker Build'
-
-- script: docker tag $(imageName):$(tag) $(dockerRegistryServiceConnection)/$(imageName):$(tag)
-  displayName: 'Docker Tag'
-
-- script: docker push $(dockerRegistryServiceConnection)/$(imageName):$(tag)
-  displayName: 'Docker Push'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'harbortaas'
+    repository: 'furkan-nginx/nginx'
+    command: 'buildAndPush'
+    Dockerfile: 'Dockerfile'
+    tags: $(tag)
