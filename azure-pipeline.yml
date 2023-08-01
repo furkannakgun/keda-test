@@ -13,5 +13,5 @@ steps:
     containerRegistry: 'harbortaas'
     repository: 'furkan-nginx/nginx'
     command: 'buildAndPush'
-    Dockerfile: 'Dockerfile'
+    Dockerfile: '**/Dockerfile'
     tags: $(tag)
